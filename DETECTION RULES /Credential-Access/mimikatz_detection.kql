@@ -1,0 +1,7 @@
+// Title: Mimikatz Detection
+// MITRE ATT&CK: T1003
+// Severity: High
+
+DeviceProcessEvents
+| where ProcessCommandLine has "sekurlsa"
+| project Timestamp, DeviceName, AccountName, ProcessCommandLine
